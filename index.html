@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Portfolio Website Design</title>
+    <link rel="stylesheet" href="style.css">
+    <!----Font awesome cdn  font icon css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+</head>
+<body>
+     <div class="hero-header">
+        <div class="wrapper">
+            <header>
+                <div class="logo">
+                    <i class="fa-solid fa-d"></i>
+                    <div class="logo-text">Darshan Thakare</div>
+                </div>
+                <nav>
+                    <div class="togglebtn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <ul class="navlinks">
+                        <li><a href="#">Portfolio</a></li>
+                        <li><a href="#">Resume</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <div class="container">
+                 <div class="hero-pic" style="object-fit:  contain;">
+                    <img src="./images/1695555158034.jpg" alt="profile pic">
+                 </div>
+                 <div class="hero-text">
+                    <h5>Hi I'm <span class="input">Frontend Developer</span></h5>
+                    <h1>Darshan Thakare</h1>
+                    <p style="margin-top: 5px;line-height: 22px;"> I'm a first-year engineering student at IIT Roorkee, diving deep into chemistry with thoughts of maybe going for a PhD down the line. Right now, I’m sharpening my C++ skills, focusing more on nailing the syntax and little bit of competitive coding. Outside of the academic grind, I’m all about fitness and hitting the gym hard. Nature's my escape, and I’ve got a knack for turning algorithms into adventures. Oh, and I’m a serious movie buff—whether it’s classic cinema or cult favorites, I’m all in.
+                    </p>
+
+                    <div class="btn-group">
+                       <a href="#" class="btn active">Download CV</a>
+                       <a href="#" class="btn">Contact</a>
+                    </div>
+
+                    <div class="social">
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.linkedin.com/in/darshan-thakare-5a5b42171/"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                 </div>
+            </div>
+        </div>
+        <section class="achievements-section">
+            <h2 class="section-heading">Achievements</h2>
+            <ul class="achievements-list">
+                <li>Cleared JEE Advanced and JEE Mains</li>
+                <li>NTSE Scholar</li>
+                <li>KVPY SA Scholar (AIR 54)</li>
+                <li>Karate Black Belt</li>
+                <li>New Year Coding Challenge 2021 - 2nd Runner Up</li>
+                <li>GSOC 2023 Contributor</li>
+            </ul>
+        </section>
+     </div>
+
+     <!---typed js for typing text effect-->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.min.js"></script>
+     <script>
+        /** creating button click show hide navbar **/
+        var togglebtn=document.querySelector(".togglebtn");
+        var nav=document.querySelector(".navlinks");
+        var links=document.querySelector(".navlinks li");
+
+        togglebtn.addEventListener("click", function(){
+            this.classList.toggle("click");
+            nav.classList.toggle("open");
+        })
+
+        var typed=new Typed(".input",{
+            strings:["Frontend Developer","UX Designer","Web Developer"],
+            typedSpeed:70,
+            backSpeed:55,
+            loop:true
+        })
+     </script>
+</body>
+</html>
