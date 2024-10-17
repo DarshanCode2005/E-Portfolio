@@ -69,16 +69,15 @@
             <div class="projects-container" id="projects-container">
                 <!-- Project cards will be inserted here -->
             </div>
-        </section>        
+        </section>
+           
 
      </div>
 
      <!---typed js for typing text effect-->
      <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.min.js"></script>
-     
-
-        <script>
-             /** creating button click show hide navbar **/
+     <script>
+        /** creating button click show hide navbar **/
         var togglebtn=document.querySelector(".togglebtn");
         var nav=document.querySelector(".navlinks");
         var links=document.querySelector(".navlinks li");
@@ -94,41 +93,57 @@
             backSpeed:55,
             loop:true
         })
-// Array of GitHub repository names you want to feature
-const featuredProjects = [
-    "DarshanCode2005/Cactus-Website",
-    "DarshanCode2005/Bookmarker-App",
-    "/Burgermania-website",
-    
+
+        
+     </script>
+
+     <!-- <script> -->
+        <script>
+// Array of projects with title, description, and GitHub link
+const projects = [
+    {
+        title: "Bookmarker App",
+        description: "Effortlessly organize and save your favorite links with our simple and intuitive bookmarker, keeping your digital life streamlined and accessible.",
+        link: "https://github.com/DarshanCode2005/Bookmarker-App"
+    },
+    {
+        title: "Cactus Website",
+        description: "Designed a clean and vibrant website for a cactus-selling business, offering an engaging shopping experience for plant enthusiasts.",
+        link: "https://github.com/DarshanCode2005/Cactus-Website"
+    },
+    {
+        title: "Burgermania",
+        description: "Created a mouth-watering website for a burger-selling business, showcasing delicious options and providing a seamless ordering experience.",
+        link: "https://github.com/DarshanCode2005/Burgermania-website"
+    },
+    {
+        title: "Image Gallery",
+        description: "Developed an interactive image gallery for a website, featuring a responsive layout and a visually engaging grid design, allowing users to explore images effortlessly across devices.",
+        link: "https://github.com/DarshanCode2005/Simple-Image-Gallary"
+    }
 ];
 
-// Fetch and display the project details
-async function fetchProjects() {
+// Function to render project cards
+function displayProjects() {
     const container = document.getElementById('projects-container');
     
-    for (let repo of featuredProjects) {
-        const apiUrl = `https://api.github.com/repos/${repo}`;
-        try {
-            const response = await fetch(apiUrl);
-            const project = await response.json();
+    projects.forEach(project => {
+        const projectCard = document.createElement('div');
+        projectCard.classList.add('project-card');
 
-            // Create project card
-            const projectCard = document.createElement('div');
-            projectCard.classList.add('project-card');
+        projectCard.innerHTML = `
+            <h3 class="project-title">${project.title}</h3>
+            <p class="project-description">${project.description}</p>
+            <a class="project-link" href="${project.link}" target="_blank">View on GitHub</a>
+        `;
 
-            projectCard.innerHTML = `
-                <h3 class="project-title">${project.name}</h3>
-                <p class="project-description">${project.description || "No description available."}</p>
-                <a class="project-link" href="${project.html_url}" target="_blank">View on GitHub</a>
-            `;
-
-            container.appendChild(projectCard);
-        } catch (error) {
-            console.error('Error fetching project:', error);
-        }
-    }
+        container.appendChild(projectCard);
+    });
 }
 
+// Load the projects once the page is fully loaded
+window.onload = displayProjects;
+</script>
 
 
      </script>
